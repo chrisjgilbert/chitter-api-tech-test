@@ -11,9 +11,13 @@ describe('User visits homepage', function() {
     return browser.visit('/');
   });
 
-  describe('homepage', function() {
-    it('should see welcome page', function() {
+  describe('peeps homepage', function() {
+    it('should display title', function() {
       expect(browser.text("title")).to.equal('Chitter Api Tech Test')
+    });
+
+    it('should display a list of peeps', function() {
+      expect(browser.text("h1")).to.equal('Peepline')
     });
   });
 
