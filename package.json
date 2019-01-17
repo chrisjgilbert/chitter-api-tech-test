@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chrisjgilbert/chitter-api-tech-test/issues"
   },
-  "homepage": "https://github.com/chrisjgilbert/chitter-api-tech-test#readme"
+  "homepage": "https://github.com/chrisjgilbert/chitter-api-tech-test#readme",
+  "devDependencies": {
+    "zombie": "^6.1.4"
+  }
 }
