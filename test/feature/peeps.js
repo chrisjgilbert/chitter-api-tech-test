@@ -20,8 +20,9 @@ describe('User visits homepage', function() {
       expect(browser.text("h1")).to.equal('Peepline')
     });
 
-    it('should display most recent peep', function() {
-      expect(browser.text("li")).to.equal('Hit em up? More like hit me up (pls)')
+    it('should display list of all peeeps with most recent peep first', function() {
+      expect(browser.text("li:nth-of-type(1)")).to.equal('Hit em up? More like hit me up (pls)')
+      expect(browser.text("li:nth-of-type(2)")).to.equal('guess who?')
     });
   });
 
