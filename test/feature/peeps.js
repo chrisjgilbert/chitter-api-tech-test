@@ -16,8 +16,12 @@ describe('User visits homepage', function() {
       expect(browser.text("title")).to.equal('Chitter Api Tech Test')
     });
 
-    it('should display a list of peeps', function() {
+    it('should display page h1', function() {
       expect(browser.text("h1")).to.equal('Peepline')
+    });
+
+    it('should display most recent peep', function() {
+      expect(browser.text("li")).to.equal('Hit em up? More like hit me up (pls)')
     });
   });
 
