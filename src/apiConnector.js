@@ -6,7 +6,7 @@ var getPeeps = function(callback) {
     .end(function(err, res) {
       if (!err) {
         var peeps = res.body.map(function(peep) {
-          return peep.id;
+          return peep;
         });
         callback(null, peeps);
       } else {
