@@ -1,26 +1,20 @@
-process.env.NODE_ENV = 'test'
+var Browser = require('zombie');
+var app = require('../../server');
+var expect = require('expect.js')
+Browser.localhost('example.com', 3000);
 
-var app = require('../../server')
-var Browser = require('zombie')
-var assert = require('assert');
+describe('User visits signup page', function() {
 
-describe('peeps index page', function() {
-
-  before(function() {
-    this.server = http.createServer(app).listen(3000)
-    this.browser = new Browser( { site: 'http://localhost:3000' } )
-  })
+  const browser = new Browser();
 
   before(function() {
-    this.browser.load('/peeps', done)
-  })
+    return browser.visit('/');
+  });
 
-  it('should display all peeps', function() {
-    assert.ok(this.browser.success)
-    assert.equal(this.browser.text('h1'), 'Hello, world')
-  })
+  describe('homepage', function() {
+    it('should see welcome page', function() {
+      expect(browser.text("title")).to.equal('Chitter Api Tech Test');
+    });
+  });
 
-  after(function() {
-    this.server.close(done)
-  })
-})
+});
