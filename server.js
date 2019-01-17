@@ -2,9 +2,8 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.set('views', __dirname);
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
     res.render("index");
