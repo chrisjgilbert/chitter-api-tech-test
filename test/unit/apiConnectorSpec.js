@@ -21,7 +21,7 @@ describe('GET peeps', function() {
         }]
       }
     ]
-    nock("https://chitter-backend-api.herokuapp.com/peeps")
+    nock("https://chitter-backend-api.herokuapp.com/")
       .get('/peeps')
       .reply(200, peepsResponse);
     });
